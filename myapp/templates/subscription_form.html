@@ -1,0 +1,125 @@
+{% extends 'components/base.html' %}
+{% load static %}
+{% block site_title %}ລົງທະບຽນ |{% endblock %}
+
+{% block content %}
+   
+<div class="form-page-container">
+<img src="{% static 'images/logoViTA.png' %}" class="logo-img" alt="Logo" style="width: 120px; height: auto;">
+    <h2 class="form-title">ແບບຟອມສອບຖານນັກຮຽນສູນປາລີ</h2>
+       <h4 class="form-title">   Student Inquiry Form palee center</h4>
+    <p class="form-note">* ກະລຸນາປ້ອນຂໍ້ມູນໃຫ້ຄົບຖ້ວນ</p>
+    {% if form.errors %}
+<div style="color: red; margin-bottom: 20px;">
+  <ul>
+    {% for field in form %}
+      {% for error in field.errors %}
+        <li><strong>{{ field.label }}:</strong> {{ error }}</li>
+      {% endfor %}
+    {% endfor %}
+    {% for error in form.non_field_errors %}
+      <li>{{ error }}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+    <form method="post" action="{% url 'subscription' %}">
+      {% csrf_token %}
+
+      <!-- Personal Info -->
+      <fieldset class="form-section">
+        <legend>ຂໍ້ມູນສ່ວນຕົວ</legend>
+        <div class="row">
+          <div class="form-group">
+            {{ form.StudentID.label_tag }}{{ form.StudentID }}
+          </div>
+          <div class="form-group">
+          
+        </div>
+        
+        </div>
+        <div class="row">
+          <div class="form-group">
+            {{ form.gender.label_tag }}{{ form.gender }}
+          </div>
+          <div class="form-group">
+            {{ form.name.label_tag }}{{ form.name }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group">
+            {{ form.name_eng.label_tag }}{{ form.name_eng }}
+          </div>
+          <div class="form-group">
+            {{ form.age.label_tag }}{{ form.age }}
+          </div>
+          <div class="form-group">
+            {{ form.birthday.label_tag }}{{ form.birthday }}
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Contact Info -->
+      <fieldset class="form-section">
+        <legend>ຂໍ້ມູນຕິດຕໍ່</legend>
+        <div class="row">
+          <div class="form-group">
+            {{ form.email.label_tag }}{{ form.email }}
+          </div>
+          <div class="form-group">
+            {{ form.tel.label_tag }}{{ form.tel }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group">
+            {{ form.province.label_tag }}{{ form.province }}
+          </div>
+          <div class="form-group">
+            {{ form.districts.label_tag }}{{ form.districts }}
+          </div>
+          <div class="form-group">
+            {{ form.village.label_tag }}{{ form.village }}
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Education Info -->
+      <fieldset class="form-section">
+        <legend>ຂໍ້ມູນການສຶກສາ</legend>
+        <div class="row">
+          <div class="form-group">
+            {{ form.from_school.label_tag }}{{ form.from_school }}
+          </div>
+          <div class="form-group">
+            {{ form.academic_year.label_tag }}{{ form.academic_year }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group">
+            {{ form.semester.label_tag }}{{ form.semester }}
+          </div>
+          <div class="form-group">
+            {{ form.employee.label_tag }}{{ form.employee }}
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Subjects -->
+      <fieldset class="form-section">
+        <legend>ສາຂາຮຽນທີ່ສົນໃຈ</legend>
+        <div class="form-group full-width">
+          {{ form.subject_set }}
+        </div>
+      </fieldset>
+
+      <!-- Agreement -->
+      <div class="form-group">
+        <label>{{ form.accepted }} {{ form.accepted.label }}</label>
+      </div>
+
+      <button type="submit" class="button12">ລົງທະບຽນ</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

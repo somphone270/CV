@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="lo">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | VVC</title>
+
+  <!-- CSS แบบแยกไฟล์ -->
+    <link rel="stylesheet" href="{% static 'main65.css' %}">
+
+ <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+<body class="login">
+
+  <!-- Background animation -->
+  <div id="particles-js"></div>
+
+  <!-- Login box -->
+  <div class="login-box">
+    <div class="logo">
+      <img src="{% static 'images/logoViTA.png' %}" alt="Logo" />
+    </div>
+    <h2>Vita Vocational College</h2>
+
+    <form method="post">
+      {% csrf_token %}
+      <div>
+        <label for="id_username">Username:</label>
+        {{ form.username }}
+      </div>
+      <div>
+        <label for="id_password">Password:</label>
+        {{ form.password }}
+      </div>
+      <button type="submit">Log in</button>
+    </form>
+
+    <!-- Forgot Password -->
+    <div class="forgot-password">
+     <a  href="{% url 'home' %}"> << Back ກັບສູ່ໜ້າຫຼັກ</a>
+
+    </div>
+  </div>
+
+  <!-- Gear particles config -->
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 40,
+          "density": { "enable": true, "value_area": 800 }
+        },
+        "shape": {
+          "type": "image",
+          "image": {
+            "src": "{% static 'images/gear-white.png' %}",
+            "width": 20,
+            "height": 20
+          }
+        },
+        "opacity": {
+          "value": 0.5,
+          "random": true
+        },
+        "size": {
+          "value": 14,
+          "random": true
+        },
+        "move": {
+          "enable": true,
+          "speed": 1.2,
+          "out_mode": "out"
+        }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "repulse"
+          }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+
+</body>
+</html>

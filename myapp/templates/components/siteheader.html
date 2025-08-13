@@ -1,0 +1,186 @@
+{% load static %}
+<!DOCTYPE html>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VVC</title>
+
+  <!-- Fonts & CSS -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Phetsarath">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body, h1, h2, h3, h4, h5, h6, .w3-bar, button {
+      font-family: "Phetsarath", sans-serif;
+    }
+
+    .w3-sidebar {
+      background-color: #28aee4ff !important; /* สีแดงสบายตา */
+    }
+
+    .logo-img {
+      width: 90px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .h1-danling {
+      font-size: 20px;
+      color: #fff;
+      font-weight: bold;
+      margin-top: 5px;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    .h2-danling {
+      font-size: 13px;
+      color: #eee;
+      text-shadow: 1px 1px 2px #000;
+      margin-bottom: 10px;
+    }
+
+    .dropbtn {
+      background-color: #fff;
+      color: #f44336;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+      padding: 8px 12px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .column {
+      margin-top: 10px;
+      background: #fff;
+      border-radius: 6px;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .column img {
+      width: 32px;
+      vertical-align: middle;
+      margin-bottom: 5px;
+    }
+
+    .w3-bar-item:hover {
+      background-color: #e53935 !important;
+    }
+  </style>
+
+<!-- Hamburger Menu Button -->
+<button class="w3-button w3-red w3-xlarge w3-hide-large w3-hide-medium"
+        onclick="myFunction()" style="position:fixed;top:10px;left:10px;z-index:999;">
+  ☰
+   <!-- Mobile menu -->
+  <div id="navDemo" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium w3-red">
+    <a class="w3-bar-item w3-button" href="{% url 'home' %}">ໜ້າຫຼັກ</a>
+    <a class="w3-bar-item w3-button" href="{% url 'subscription' %}">ປ້ອນຂໍ້ມູນສ່ວນບຸກຄົນ</a>
+    <!-- ✅ Add this for Login in mobile menu -->
+  <a class="w3-bar-item w3-button" href="http://127.0.0.1:8080/admin/login/">
+    <img src="{% static 'images/login-password-3-32.png' %}" style="width:16px;"> ເຂົ້າສູ່ລະບົບ
+  </a>
+  </div>
+</button>
+  
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:280px;" id="mySidebar"><br>
+  <div class="w3-container w3-center">
+    <a href="{% url 'home' %}" class="w3-bar-item w3-button">
+      <img src="{% static 'images/user.png' %}" class="logo-img" alt="Logo">
+    </a>
+    <h2 class="">ສ້າງ CV ອອນໄລ໌</h2>
+    <h2 class="h2-danling" color="black">Online Cv Generator</h2>
+  </div>
+
+  <div class="w3-bar w3-card w3-left-align w3-large">
+    <a href="javascript:void(0);" class="w3-bar-item w3-button w3-hide-large w3-hide-medium w3-right w3-padding-large w3-hover-white w3-red" onclick="myFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a class="w3-bar-item w3-button" href="{% url 'home' %}">ໜ້າຫຼັກ</a>
+    <a class="w3-bar-item w3-button" href="{% url 'subscription' %}">ປ້ອນຂໍ້ມູນສ່ວນບຸກຄົນ</a>
+  </div>
+
+<!-- Login -->
+<div class="w3-container w3-margin-top">
+  <button class="dropbtn" onclick="toggleDropdown()">
+    <img src="{% static 'images/login-password-3-32.png' %}" alt=""> ເຂົ້າສູ່ລະບົບ <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="column dropdown-content" id="dropdownMenu">
+    <a href="http://127.0.0.1:8000/admin">
+      <img src="{% static 'images/user_male_minus.png' %}" alt=""> ຜູ້ດູແລລະບົບ(Admin)
+    </a>
+  </div>
+</div>
+
+<style>
+  .dropbtn {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .column {
+    position: relative;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 5px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 8px 0;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+  }
+
+  .dropdown-content a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<script>
+  function toggleDropdown() {
+    var menu = document.getElementById("dropdownMenu");
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
+  }
+
+  // ปิด dropdown ถ้าคลิกนอกปุ่ม
+  window.onclick = function(event) {
+    if (!event.target.closest('.dropbtn')) {
+      document.getElementById("dropdownMenu").style.display = "none";
+    }
+  };
+</script>
+</nav>
+
+<!-- Mobile nav toggle -->
+<script>
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
