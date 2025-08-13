@@ -70,7 +70,7 @@ class Subscription(models.Model):
     Language2 = models.CharField(max_length=60 ,blank=True)
     status = models.CharField(max_length=15, choices=STATUS, default='unapproved')
     registered_at = models.DateTimeField(auto_now_add=True)
-    subject_set = models.ManyToManyField(Subject)
+ 
 
     def __str__(self):
         return f'{self.name} (id={self.id})'

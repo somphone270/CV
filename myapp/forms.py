@@ -39,8 +39,7 @@ class SubscriptionModelForm(forms.ModelForm):
         fields = [
             'StudentID','gender', 'name', 'name_eng', 'age', 'birthday',
             'email', 'tel', 'province', 'districts', 'village',
-            'from_school', 'academic_year', 'semester', 'employee',
-            'subject_set', 'accepted'
+            'from_school', 'academic_year', 'semester', 'employee', 'accepted'
         ]
         labels = {
             'StudentID':'ລະຫັດນັກຮຽນ',
@@ -58,7 +57,6 @@ class SubscriptionModelForm(forms.ModelForm):
             'academic_year': 'ປີການສຶກສາ',
             'semester': 'ພາກຮຽນ',
             'employee': 'ພະນັກງານ',
-            'subject_set': 'ສາຂາຮຽນທີ່ສົນໃຈ',
             'accepted': 'ຢືນຢັ້ງຄວາມຖືກຕ້ອງ'
         }
         widgets = {
