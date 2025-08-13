@@ -22,12 +22,12 @@ class SubscriptionModelForm(forms.ModelForm):
     )
 
 
-    subject_set = SubjectMultipleChoiceField(
-        queryset=Subject.objects.order_by('-is_premium'),
-        required=True,
-        label='ສາຂາຮຽນທີ່ສົນໃຈ :',
-        widget=forms.CheckboxSelectMultiple
-    )
+    # subject_set = SubjectMultipleChoiceField(
+    #     queryset=Subject.objects.order_by('-is_premium'),
+    #     required=True,
+    #     label='ສາຂາຮຽນທີ່ສົນໃຈ :',
+    #     widget=forms.CheckboxSelectMultiple
+    # )
 
     accepted = forms.BooleanField(
         required=True,
