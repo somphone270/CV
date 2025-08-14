@@ -76,7 +76,7 @@ div {
             <tbody>
                 {% for user in users%}
                   <td><a href="{% url 'cv_detail' user.id %}">{{user.StudentID}} </a></td>
-                  <td><center>{{user.gender}}</center></td>
+                  <td>{{user.gender}}</td>
                   <td>{{user.name}}</td>
                   <td>{{user.name_eng}}</td>
                   <td>{{user.tel}}</td>
