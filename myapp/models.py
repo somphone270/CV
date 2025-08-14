@@ -22,6 +22,14 @@ class Subscription(models.Model):
         ('Mr', 'ຊາຍ'),
         ('Miss', 'ຍິງ'),
     ]
+    Work = [
+        ('YES', 'YES'),
+        ('NO', 'NO'),
+    ]
+    School = [
+        ('YES', 'YES'),
+        ('NO', 'NO'),
+    ]
 
     STATUS = [
         ('unapproved', 'Unapproved'),
@@ -65,7 +73,7 @@ class Subscription(models.Model):
     # System Fields
     Other_Skill = models.CharField(max_length=60 ,blank=True)
     Skill = models.CharField(max_length=60 ,blank=True)
-    Level_Eng = models.CharField(max_length=60 ,blank=True)
+    Level_Eng = models.CharField(max_length=60 ,blank=True) 
     Level_Chi = models.CharField(max_length=60 ,blank=True)
     Skill_full = models.CharField(max_length=60 ,blank=True)
     Language = models.CharField(max_length=60 ,blank=True)
@@ -73,7 +81,13 @@ class Subscription(models.Model):
     Language2 = models.CharField(max_length=60 ,blank=True)
     status = models.CharField(max_length=15, choices=STATUS, default='unapproved')
     registered_at = models.DateTimeField(auto_now_add=True)
- 
+    Ability1 = models.CharField(max_length=60 ,blank=True)
+    Ability2 = models.CharField(max_length=60 ,blank=True)
+    Ability3 = models.CharField(max_length=60 ,blank=True)
+    Work = models.CharField(max_length=60 ,blank=True,choices=Work)
+    School = models.CharField(max_length=60 ,blank=True,choices=School)
+    
+   
 
     def __str__(self):
         return f'{self.name} (id={self.id})'
