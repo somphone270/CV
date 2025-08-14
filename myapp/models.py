@@ -87,7 +87,7 @@ class Subscription(models.Model):
     Ability3 = models.CharField(max_length=60 ,blank=True)
     Work = models.CharField(max_length=60 ,blank=True,choices=Work)
     School = models.CharField(max_length=60 ,blank=True,choices=School)
-    Detail_Skill = models.TextField(blank=True, null=True, default='')
+    Detail_Skill = models.CharField(blank=True, null=True, default='')
     
    
 
