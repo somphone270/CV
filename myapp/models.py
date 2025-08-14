@@ -57,6 +57,7 @@ class Subscription(models.Model):
     Current_districts = models.CharField(max_length=60 ,blank=True)
     Current_village = models.CharField(max_length=60,blank=True)
     Facebook = models.CharField(max_length=100, blank=True)
+    Parents_contact = models.CharField(max_length=100, blank=True)
 
     # Education & Work
     from_school = models.CharField(max_length=60)
