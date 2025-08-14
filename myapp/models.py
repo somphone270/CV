@@ -72,7 +72,7 @@ class Subscription(models.Model):
 
 
     # System Fields
-    Other_Skill = models.TextField(blank=True, null=True, default='')
+    Other_Skill = models.CharField(blank=True, null=True, default='')
     Skill = models.CharField(max_length=60 ,blank=True)
     Level_Eng = models.TextField(blank=True, null=True, default='') 
     Level_Chi = models.TextField(blank=True, null=True, default='')
