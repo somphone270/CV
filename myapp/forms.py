@@ -57,6 +57,9 @@ class SubscriptionModelForm(forms.ModelForm):
             'academic_year': 'ປີການສຶກສາ',
             'semester': 'ພາກຮຽນ',
             'employee': 'ພະນັກງານ',
+            'Language_Level':'ທັກສາພາສາ',
+            'Language_Level1':'ທັກສາພາສາ1',
+            'Skill_full':'ທັກສະ',
             'accepted': 'ຢືນຢັ້ງຄວາມຖືກຕ້ອງ'
         }
         widgets = {

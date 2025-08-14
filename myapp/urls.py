@@ -9,4 +9,3 @@ urlpatterns = [
     path('subscription/done/', views.subscription_done, name='subscription_done'),
     path('admin/export-subscriptions/', export_subscriptions_xls, name='export_subscriptions_xls'),
 ]
-
