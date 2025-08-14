@@ -65,8 +65,8 @@ class Subscription(models.Model):
     # System Fields
     Other_Skill = models.CharField(max_length=60 ,blank=True)
     Skill = models.CharField(max_length=60 ,blank=True)
-    Language_Level = models.CharField(max_length=60 ,blank=True)
-    Language_Level1 = models.CharField(max_length=60 ,blank=True)
+    Level_Eng = models.CharField(max_length=60 ,blank=True)
+    Level_Chi = models.CharField(max_length=60 ,blank=True)
     Skill_full = models.CharField(max_length=60 ,blank=True)
     Language = models.CharField(max_length=60 ,blank=True)
     Language1 = models.CharField(max_length=60 ,blank=True)
