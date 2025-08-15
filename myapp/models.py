@@ -72,14 +72,14 @@ class Subscription(models.Model):
 
 
     # System Fields
-    Other_Skill = models.CharField(blank=True, null=True, default='')
-    Skill = models.CharField(max_length=60 ,blank=True)
-    Level_Eng = models.TextField(blank=True, null=True, default='') 
-    Level_Chi = models.TextField(blank=True, null=True, default='')
-    Skill_full =models.TextField(blank=True, null=True, default='')
     Language = models.CharField(max_length=60 ,blank=True)
     Language1 = models.CharField(max_length=60 ,blank=True)
     Language2 = models.CharField(max_length=60 ,blank=True)
+    Language_Level1 = models.TextField(blank=True, null=True, default='') 
+    Language_Level2 = models.TextField(blank=True, null=True, default='')
+    Skill = models.CharField(max_length=60 ,blank=True)
+    Skill_full =models.TextField(blank=True, null=True, default='')
+    Other_Skill = models.CharField(blank=True, null=True, default='')
     status = models.CharField(max_length=15, choices=STATUS, default='unapproved')
     registered_at = models.DateTimeField(auto_now_add=True)
     Ability1 = models.CharField(max_length=60 ,blank=True)
