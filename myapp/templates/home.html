@@ -62,6 +62,7 @@ div {
             <thead>
                 <tr>
                     <th>ລຳດັບ</th>
+                    <th>ລະຫັດ</th>
                     <th>ເພດ (gender)</th>
                     <th>ຊື່ ແລະ ນາມສະກຸນ</th>
                     <th>Name and surname</th>
@@ -75,6 +76,7 @@ div {
             </thead>
             <tbody>
                 {% for user in users%}
+                 <td>{{user.id}}</td>
                   <td><a href="{% url 'cv_detail' user.id %}">{{user.StudentID}} </a></td>
                   <td>{{user.gender}}</td>
                   <td>{{user.name}}</td>

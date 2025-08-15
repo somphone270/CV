@@ -27,7 +27,7 @@ class SubscriptionResource(resources.ModelResource):
 class SubscriptionAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     resource_class = SubscriptionResource
     list_display = [
-        'StudentID','gender', 'name','photo', 'name_eng','age', 'birthday', 'email', 'province','Facebook','subject',
+        'id','StudentID','gender', 'name','photo', 'name_eng','age', 'birthday', 'email', 'province','Facebook','subject',
         'districts', 'Current_village','Current_village','Current_districts','province', 'tel', 'from_school', 'academic_year',
         'employee', 'semester', 'status', 'registered_at'
     ]

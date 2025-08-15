@@ -37,6 +37,7 @@ class Subscription(models.Model):
     ]
 
     # Personal Info
+    # id = models.AutoField()
     StudentID = models.CharField(max_length=60, blank=True)
     gender = models.CharField(max_length=10, choices=GENDER_CHOICES)
     name = models.CharField(max_length=60)
