@@ -76,7 +76,7 @@ class Subscription(models.Model):
     Skill = models.CharField(max_length=60 ,blank=True)
     Level_Eng = models.TextField(blank=True, null=True, default='') 
     Level_Chi = models.TextField(blank=True, null=True, default='')
-    Skill_full =models.TextField(blank=True, null=True, default='',blank=True)
+    Skill_full =models.TextField(blank=True, null=True, default='')
     Language = models.CharField(max_length=60 ,blank=True)
     Language1 = models.CharField(max_length=60 ,blank=True)
     Language2 = models.CharField(max_length=60 ,blank=True)
