@@ -20,7 +20,7 @@ class SubscriptionResource(resources.ModelResource):
             'id', 'name', 'gender', 'name_eng', 'age','profile','Skills','birthday', 'email', 'province',
             'province_school','districts_school','village_school','Mo','Language','Language1','Language2','Nationality','Parents_contact',
             'districts', 'village', 'tel', 'from_school', 'academic_year','Religion','Other_Skill','Ability1','Ability2','Ability3','Work','School'
-            'employee', 'semester', 'status', 'registered_at', 'subject_names','Language_Level','Language_Level1','Skill_full','Detail_Skill'
+            'employee', 'semester', 'status', 'registered_at', 'subject_names','Language_Level','Language_Level2','Skill_full','Detail_Skill'
         )
 
 # Subscription Admin
