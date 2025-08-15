@@ -1,13 +1,94 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="lo">
-<head>
+<head> 
+<script>
+/* Login box */
+.login-box {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(60, 209, 222, 0.97);
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 1s ease-in-out;
+  box-sizing: border-box;
+}
+
+.login-box .logo img {
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.login-box h2 {
+  font-size: 32px;
+  color: #1e3a8a;
+  margin-bottom: 24px;
+  font-weight: bold;
+  animation: glowPulse 2s infinite alternate;
+}
+
+.login-box label {
+  display: block;
+  margin-top: 10px;
+  text-align: left;
+  color: #333;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  border-radius: 8px;
+  border: 1px solid hsl(0, 22%, 96%);
+  box-sizing: border-box;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 16px;
+  background-color: #1e3a8a;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-box button:hover {
+  background-color: #0e63b1;
+}
+
+/* Forgot password link */
+.forgot-password {
+  margin-top: 12px;
+}
+
+.forgot-password a {
+  color: #0e63b1;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+
+    
+</script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login | VVC</title>
 
   <!-- CSS แบบแยกไฟล์ -->
-    <link rel="stylesheet" href="{% static 'main65.css' %}">
+    {% comment %} <link rel="stylesheet" href="{% static 'main65.css' %}"> {% endcomment %}
 
  <!-- Particles.js -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
@@ -22,8 +103,8 @@
     <div class="logo">
       <img src="{% static 'images/logoViTA.png' %}" alt="Logo" />
     </div>
-    <h2>Vita Vocational College</h2>
-
+    <h2>ເຂົ້າສູ່ລະບົບຈັດການຖານຂໍ້ມູນ</h2>
+    <h2>Management Database System</h2>
     <form method="post">
       {% csrf_token %}
       <div>
