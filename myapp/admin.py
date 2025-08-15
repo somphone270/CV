@@ -11,8 +11,8 @@ from .models import MyModel
 class SubscriptionResource(resources.ModelResource):
     subject_names = Field(column_name='subject_names')
 
-    def dehydrate_subject_names(self, obj):
-        return ", ".join([s.name for s in obj.subject_set.all()])
+    # def dehydrate_subject_names(self, obj):
+    #     return ", ".join([s.name for s in obj.subject_set.all()])
 
     class Meta:
         model = Subscription
@@ -22,6 +22,7 @@ class SubscriptionResource(resources.ModelResource):
             'districts', 'village', 'tel', 'from_school', 'academic_year','Religion','Other_Skill','Ability1','Ability2','Ability3','Work','School'
             'employee', 'semester', 'status', 'registered_at', 'subject_names','Language_Level','Language_Level2','Skill_full','Detail_Skill'
         )
+        
 
 # Subscription Admin
 class SubscriptionAdmin(ImportExportModelAdmin, admin.ModelAdmin):
