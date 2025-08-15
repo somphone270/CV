@@ -10,7 +10,7 @@ import xlwt
 
 
 def home (request):
-   all_users = Subscription.objects.all()
+   all_users = Subscription.objects.order_by('id')
    context = {'users':all_users}
    return render(request, 'home.html', context)
 
