@@ -21,43 +21,22 @@ div {
 
 
   <!-- ສ່ວນສະແດງຊື່ສາຂາ -->
- <div width="100%" style="margin-top: 40px;">
+ {% comment %} <div width="100%" style="margin-top: 40px;">
   <h3 style="background-color: LightSteelBlue; padding: 10px;">
-   <center> ບັນຊີລາຍຊື່ຂອງນັກຮຽນທີ່ໄດ້ຮັບທືນການສຶກສາຈາກບໍລິສັດລາວວິຕ້າ
-    ( Name list of Vita Scholarship for Palee School)
+   
      </center>
-  </h3>
+  </h3> {% endcomment %}
 
 
-<h4>REPORTING TO CURRICULUM VITAE (CV) <div>Credit by :somphone BOUNTHANHH </div></h4>
-
-{% comment %} <table style="width:100%">
- <tr>
-    <th>ລຳດັບ</th>
-    <th>ຊື່ ແລະ ນາມສະກຸນ</th>
-    <th>Name and surname</th>
-    <th>ເບີໂທ (Tel)</th>
-    <th>ເບີຜູ້ປົກຄອງ (Parent Tel)</th>
-    <th>ໂຮງຮຽນ(School)</th>
-    <th>ເມືອງ(district)</th>
-    <th>ແຂວງ(Provice)</th>
-    <th>ວິຊາຮຽນ(Subject)</th>
+<table style="width:100%">
+  <tr>
+    <td rowspan=3 style="background-color: LightSteelBlue; padding: 10px;"><center>ບັນຊີລາຍຊື່ຂອງນັກຮຽນທີ່ໄດ້ຮັບທືນການສຶກສາຈາກບໍລິສັດລາວວິຕ້າ
+    ( Name list of Vita Scholarship for Palee School)</center><br>
+    *REPORTING TO CURRICULUM VITAE (CV) <div>Credit by :somphone BOUNTHANHH</td>
   </tr>
-     {% for user in users %}
-        <tr>
-          <td>{{user.gender}}</td>
-          <td>{{user.name}}</td>
-          <td>{{user.name_eng}}</td>
-          <td>{{user.tel}}</td>
-          <td>{{user.email}}</td>
-          <td>{{user.from_school}}</td>
-          <td>{{user.districts}}</td>
-          <td>{{user.province}}</td>
-          <td>{{user.academic_year}}</td>
-          
-        </tr>
-    {% endfor %}
-</table> {% endcomment %}
+  <tr>
+
+</table>
         <table border="1" width="100%">
             <thead>
                 <tr>
