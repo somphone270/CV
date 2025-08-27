@@ -15,8 +15,6 @@ import os
 from import_export.formats.base_formats import CSV, XLSX, HTML, JSON, ODS
 import dj_database_url
 from decouple import config
-from dotenv import load_dotenv
-load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -58,7 +56,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -105,28 +102,28 @@ WSGI_APPLICATION = 'mywebvita.wsgi.application'
 #     }
 # }
 
-DB_LIVE= os.getenv("DB_LIVE")
-if  DB_LIVE in ["False", False]:
-        DATABASES = {
-        'default': {
-            'ENGINE' :'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'DB.sqlite3',
-        
-           }
-        }
-else:
+# DATABASES = {
+#      'default': {
+#         'ENGINE': 'mysql.connector.django',
+#         'NAME': 'VITA_DATABASEPC',
+#         'USER':'root',
+#         'PASSWORD':'adminsomphone',
+#         'HOST':'127.0.0.1',
+#         'PORT':'3306',
+#         'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",},
+#      }
+#  }
 
-    DATABASES= {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME':os.getenv("DB_NAME"),
-            'USER':os.getenv("DB_USER"),
-            'PASSWORD':os.getenv("DB_PASSWORD"),
-            'HOST':os.getenv("DB_HOST"),
-            'PORT':os.getenv("DB_POST"),
-            
-        }
-    }
+DATABASES= {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'vita_databasepc',
+        'USER':'postgres',
+        'PASSWORD':'adminsomphone',
+        'HOST':'localhost',
+        'PORT':'5432'
+     }
+}
 
 # DATABASES['default'] = dj_database_url.parse(config("DATABASE_URL"))
 
@@ -170,8 +167,6 @@ IMPORT_FORMATS = [CSV,XLSX, HTML, ODS]
 # single export options
 EXPORT_FORMATS = [XLSX,CSV,HTML,ODS]
 STATIC_URL = '/static/'  
-STATIC_ROOT = BASE_DIR / "staticfiles"
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'myapp', 'static')]
 SIMPLEUI_HOME_INFO = False
 SIMPLEUI_ANALYSIS = False
