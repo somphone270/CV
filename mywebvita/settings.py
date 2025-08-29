@@ -35,7 +35,8 @@ DEBUG =True
 # AGE =config("AGE", cast=int)
 
 # ALLOWED_HOSTS = ['192.168.100.34']
-# ALLOWED_HOSTS =config("ALLOWED_HOSTS").split(",")
+
+ALLOWED_HOSTS =config("ALLOWED_HOSTS").split(",")
 
 
 ALLOWED_HOSTS = ['192.168.100.34','localhost', '127.0.0.1']
@@ -125,7 +126,7 @@ DATABASES= {
      }
 }
 
-# DATABASES['default'] = dj_database_url.parse(config("DATABASE_URL"))
+DATABASES['default'] = dj_database_url.parse(config("DATABASE_URL"))
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
