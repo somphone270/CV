@@ -40,7 +40,7 @@ DEBUG =True
 # ALLOWED_HOSTS =config("ALLOWED_HOSTS").split(",")
 
 
-ALLOWED_HOSTS = ['192.168.100.34','localhost', '127.0.0.1']
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -91,7 +91,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mywebvita.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 # DATABASES = {
@@ -105,18 +104,7 @@ WSGI_APPLICATION = 'mywebvita.wsgi.application'
 #     }
 # }
 
-DB_LIVE= os.getenv("DB_LIVE")
-if  DB_LIVE in ["False", False]:
-        DATABASES = {
-        'default': {
-            'ENGINE' :'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'DB.sqlite3',
-        
-           }
-        }
-else:
-
-    DATABASES= {
+DATABASES= {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
             'NAME':os.getenv("DB_NAME"),
