@@ -39,11 +39,11 @@ DEBUG =config("DEBUG", cast=bool)
 ALLOWED_HOSTS =config("ALLOWED_HOSTS").split(",")
 
 
-<<<<<<< HEAD
+
 ALLOWED_HOSTS = ["*"]
-=======
+
 # ALLOWED_HOSTS = ['192.168.100.34','localhost', '127.0.0.1']
->>>>>>> 78a80ce8bdcd5251f08cf76715b8cdbc0f1440ed
+
 
 # Application definition
 
@@ -106,7 +106,6 @@ WSGI_APPLICATION = 'mywebvita.wsgi.application'
 #     }
 # }
 
-<<<<<<< HEAD
 DATABASES= {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
@@ -118,7 +117,7 @@ DATABASES= {
             
         }
     }
-=======
+
 # DATABASES = {
 #      'default': {
 #         'ENGINE': 'mysql.connector.django',
@@ -141,7 +140,7 @@ DATABASES= {
         'PORT':'5432'
      }
 }
->>>>>>> 78a80ce8bdcd5251f08cf76715b8cdbc0f1440ed
+
 
 DATABASES['default'] = dj_database_url.parse(config("DATABASE_URL"))
 
