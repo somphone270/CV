@@ -10,6 +10,7 @@ class Subject(models.Model):
     photo = models.ImageField(upload_to='subject_photos/', blank=True, null=True)
     description = models.TextField(blank=True, null=True, default='')
     price = models.CharField(max_length=255, null=True, blank=True, default='')
+    unit = models.CharField(max_length=255, null=True, blank=True, default='')
     is_premium = models.BooleanField(default=False)
     promotion_end_at = models.DateField(null=True, blank=True)
 

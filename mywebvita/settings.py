@@ -15,8 +15,6 @@ import os
 from import_export.formats.base_formats import CSV, XLSX, HTML, JSON, ODS
 import dj_database_url
 from decouple import config
-from dotenv import load_dotenv
-load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,20 +25,25 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-fk@6pwez0#@6jgt2&lg8_0nx+-c8qa4ri(ryu%x8449&k%_cp%"
-# SECRET_KEY = config("SECRET_KEY")
+# SECRET_KEY = "django-insecure-fk@6pwez0#@6jgt2&lg8_0nx+-c8qa4ri(ryu%x8449&k%_cp%"
+SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG =config("DEBUG", cast=bool)
+DEBUG =config("DEBUG", cast=bool)
 
-DEBUG =True
+# DEBUG =True
 # AGE =config("AGE", cast=int)
 
 # ALLOWED_HOSTS = ['192.168.100.34']
-# ALLOWED_HOSTS =config("ALLOWED_HOSTS").split(",")
+
+ALLOWED_HOSTS =config("ALLOWED_HOSTS").split(",")
 
 
+<<<<<<< HEAD
 ALLOWED_HOSTS = ["*"]
+=======
+# ALLOWED_HOSTS = ['192.168.100.34','localhost', '127.0.0.1']
+>>>>>>> 78a80ce8bdcd5251f08cf76715b8cdbc0f1440ed
 
 # Application definition
 
@@ -58,7 +61,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -104,6 +106,7 @@ WSGI_APPLICATION = 'mywebvita.wsgi.application'
 #     }
 # }
 
+<<<<<<< HEAD
 DATABASES= {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
@@ -115,8 +118,32 @@ DATABASES= {
             
         }
     }
+=======
+# DATABASES = {
+#      'default': {
+#         'ENGINE': 'mysql.connector.django',
+#         'NAME': 'VITA_DATABASEPC',
+#         'USER':'root',
+#         'PASSWORD':'adminsomphone',
+#         'HOST':'127.0.0.1',
+#         'PORT':'3306',
+#         'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",},
+#      }
+#  }
 
-# DATABASES['default'] = dj_database_url.parse(config("DATABASE_URL"))
+DATABASES= {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'vita_databasepc',
+        'USER':'postgres',
+        'PASSWORD':'adminsomphone',
+        'HOST':'localhost',
+        'PORT':'5432'
+     }
+}
+>>>>>>> 78a80ce8bdcd5251f08cf76715b8cdbc0f1440ed
+
+DATABASES['default'] = dj_database_url.parse(config("DATABASE_URL"))
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -135,7 +162,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
@@ -158,8 +184,6 @@ IMPORT_FORMATS = [CSV,XLSX, HTML, ODS]
 # single export options
 EXPORT_FORMATS = [XLSX,CSV,HTML,ODS]
 STATIC_URL = '/static/'  
-STATIC_ROOT = BASE_DIR / "staticfiles"
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'myapp', 'static')]
 SIMPLEUI_HOME_INFO = False
 SIMPLEUI_ANALYSIS = False
