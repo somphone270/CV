@@ -25,13 +25,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-fk@6pwez0#@6jgt2&lg8_0nx+-c8qa4ri(ryu%x8449&k%_cp%"
-# SECRET_KEY = config("SECRET_KEY")
+# SECRET_KEY = "django-insecure-fk@6pwez0#@6jgt2&lg8_0nx+-c8qa4ri(ryu%x8449&k%_cp%"
+SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG =config("DEBUG", cast=bool)
+DEBUG =config("DEBUG", cast=bool)
 
-DEBUG =True
+# DEBUG =True
 # AGE =config("AGE", cast=int)
 
 # ALLOWED_HOSTS = ['192.168.100.34']
@@ -145,7 +145,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
